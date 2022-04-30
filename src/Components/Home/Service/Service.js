@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import CheckOut from '../../CheckOut/CheckOut';
 
 const Service = ({ service }) => {
     const { name, price, description, img } = service;
@@ -13,7 +15,7 @@ const Service = ({ service }) => {
                         {description}
                     </Card.Text>
                     <p>${price}</p>
-                    <Button variant="primary">Book Now</Button>
+                    <a href='/checkout' className='btn btn-primary'>Book Now</a>
                 </Card.Body>
             </Card>
         </div>
