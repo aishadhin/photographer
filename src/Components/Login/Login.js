@@ -21,6 +21,10 @@ const Login = () => {
         navigate('/register');
     }
 
+    if(user){
+        navigate('/')
+    }
+
     const emailSign = event =>{
         setEmail(event.target.value)
     }
@@ -45,10 +49,10 @@ const Login = () => {
                     <label for="exampleInputPassword1">Password</label>
                     <input onBlur={passwordSign} type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
                 </div>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button onClick={() => signInWithEmailAndPassword(email, password)} type="submit" class="btn btn-primary">Login</button>
             </form>
             <small className='d-block text-primary text-center'>OR</small><br />
-            <button onClick={() => signInWithEmailAndPassword(email, password)} className='btn btn-primary w-100'>Signin With Google</button>
+            <button className='btn btn-primary w-100'>Signin With Google</button>
             <p className='mt-3 text-primary'>Haven't any account? <span role='button' className='text-danger' onClick={navigateLogin}>Please Register.</span></p>
         </div>
     );
