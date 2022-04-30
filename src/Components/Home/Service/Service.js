@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 
 const Service = ({ service }) => {
-    const { name, description, img } = service;
+    const { name, price, description, img } = service;
     return (
         <div>
             <Card style={{ width: '18rem'}}>
@@ -12,6 +12,7 @@ const Service = ({ service }) => {
                     <Card.Text>
                         {description}
                     </Card.Text>
+                    <p>${price}</p>
                     <Button variant="primary">Book Now</Button>
                 </Card.Body>
             </Card>
